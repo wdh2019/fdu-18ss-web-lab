@@ -142,7 +142,7 @@
             <td>1</td>
             <td>$700</td>
             <td>$700</td>
-         </tr>  -->
+         </tr> -->
          
          <!-- 你需要按照图片上的要求使用javascript来完成 -->
          <!-- 所需要的数据在这里 -->
@@ -264,7 +264,84 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="bootstrap3_defaultTheme/assets/js/jquery.js"></script>
-    <script src="bootstrap3_defaultTheme/dist/js/bootstrap.min.js"></script>    
+    <script type="text/javascript">
+      //创建函数输出一行内容
+      function createTr(imgsrc,title,quantity,price,num){
+      var tr=document.createElement("tr");
+      var table=document.querySelector(".table-condensed").children[0];
+      function createTdImg(i){
+         var td=document.createElement("td");
+         var img=document.createElement("img");
+         img.src="images/art/tiny/"+imgsrc;
+         img.className="img-thumbnail";
+         img.alt="...";
+         td.appendChild(img);
+         tr.appendChild(td);
+      }
+      function createTdText(i){
+          var td=document.createElement("td");
+          td.innerHTML=i;
+          tr.appendChild(td);
+      }
+      function createTdAmount(q,p){
+         var td=document.createElement("td");
+         td.innerHTML="$"+q*p;
+         td.className="amount";
+         tr.appendChild(td);
+      }
+      createTdImg(imgsrc);
+      createTdText(title);
+      createTdText(quantity);
+      createTdText("$"+price);
+      createTdAmount(quantity,price);
+      table.children[num].insertAdjacentElement("afterend",tr)
+      }
+      function createTrWithInfoLoaded(obj,num){
+         createTr(obj.$file,obj.$product,obj.$quantity,obj.$price,num);
+   }
+   //用循环输出所有商品行
+   var product=new Array(2);
+   product[0]={
+      $file:'116010.jpg',
+      $product: 'Artist Holding a Thistle',
+      $quantity: 2,
+      $price: 500
+   };
+   product[1]={
+      $file:'113010.jpg',
+      $product: 'Self-portrait in a Straw Hat',
+      $quantity: 1,
+      $price: 700
+   }
+      for(i=0;i<2;i++){
+         createTrWithInfoLoaded(product[i],i);
+      }
+   //使用函数计算价格
+   var subtotal=0;
+   var tax=0;
+   var shipping=0;
+   var grandtotal=0;
+   function calculatePrice(){
+   var amount=document.getElementsByClassName("amount");
+   
+      for(var i=0;i<amount.length;i++){
+          subtotal+=parseInt(amount[i].innerHTML.replace("$",""));
+      }
+      tax=subtotal/10;
+      function calcShipping(i){
+         if(subtotal>1000){return 0;}
+         return 40;
+      }
+      shipping=calcShipping(subtotal);
+      grandtotal=subtotal+tax+shipping;
+      var moveRight=document.getElementsByClassName("moveRight");
+      moveRight[0].nextElementSibling.innerHTML="$"+subtotal;
+      moveRight[1].nextElementSibling.innerText="$"+tax;
+      moveRight[2].nextElementSibling.innerHTML="$"+shipping;
+      moveRight[3].nextElementSibling.innerHTML="$"+grandtotal;
+   }
+   calculatePrice();
+   </script>
+    
   </body>
 </html>

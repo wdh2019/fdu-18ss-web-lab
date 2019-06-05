@@ -8,8 +8,18 @@ $sql="SELECT * FROM continents";
 $result=$db->query($sql);
 $sql1="SELECT * FROM countries";
 $result1=$db->query($sql1);
-$sql2="SELECT * FROM imagedetails";
-$result2=$db->query($sql2);
+
+if(empty($_GET['continent'])===false){
+$continent=$_GET['continent'];}
+else{$continent="0";}
+if(empty($_GET['country'])===false){
+$country=$_GET['country'];}
+else{$country="0";}
+if(empty($_GET['title'])===false){
+$title=$_GET['title'];}
+else{$title="";}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -100,6 +110,30 @@ $result2=$db->query($sql2);
             </li>        
             */ 
 
+            
+            if($continent==="0"&$country==="0"&$title===""){
+            $sql2="SELECT * FROM imagedetails";
+            }
+            else if($continent!=="0"&$country==="0"&$title===""){
+            $sql2="SELECT * FROM imagedetails WHERE ContinentCode='".$continent."'";
+            }
+            else if($continent==="0"&$country!=="0"&$title===""){
+            $sql2="SELECT * FROM imagedetails WHERE CountryCodeISO='".$country."'";
+            }
+            else if($continent==="0"&$country==="0"&$title!==""){
+            $sql2="SELECT * FROM imagedetails WHERE Title='".$title."'";  
+            }
+            else if($continent!=="0"&$country!=="0"&$title===""){
+              $sql2="SELECT * FROM imagedetails WHERE ContinentCode='".$continent."' AND CountryCodeISO='".$country."'";  
+              }
+            else if($continent!=="0"&$country==="0"&$title!==""){
+                $sql2="SELECT * FROM imagedetails WHERE ContinentCode='".$continent."' AND Title='".$title."'";  
+                }
+            else if($continent==="0"&$country!=="0"&$title!==""){
+                  $sql2="SELECT * FROM imagedetails WHERE CountryCodeISO='".$country."'AND Title='".$title."'";  
+                  }
+            else{$sql2=" SELECT * FROM imagedetails WHERE  ContinentCode='".$continent."'AND CountryCodeISO='".$country."'AND Title='".$title."'";}
+            $result2=$db->query($sql2);
             while($row=$result2->fetch_assoc()){
               echo '<li>';
               echo "<a href='detail.php?id=".$row['ImageID']."' class='img-responsive'>";
@@ -112,6 +146,7 @@ $result2=$db->query($sql2);
               echo "</div>";
               echo "</a>";
               echo "</li>";
+
             }
 
             $result->close();

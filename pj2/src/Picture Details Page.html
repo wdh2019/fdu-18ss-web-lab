@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品详情</title>
+    <link href="../bootstrap3/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/CSS details.css">
+    <link href="css/CSS log+reg.css" rel="stylesheet">
+</head>
+<body>
+    <header class="container">
+            <ul class="row list list-unstyled list-inline" id="afterloginorregistration">
+                <li>Welcome! Please first <strong><a href="#login">Login</a></strong>/<strong><a href="#registration">Register</a></strong> </li><li><a class="shoppingcart" href="Shopping%20Cart%20Page.html"><span class="glyphicon glyphicon-shopping-cart"></span>shoppingcart</a></li><li><a class="logout"><span class="glyphicon glyphicon-log-out"></span> logout</a></li>
+            </ul>
+                    
+            <div class="row"><h1 title="logo" class="col-lg-2">Art Store</h1>
+                     <div class="col-lg-3">As the sun colours flowers so does art colour life．</div>  
+                <form action="Search%20Page.html" method="get" class="col-lg-2 col-lg-offset-5 form-inline">
+                         <div class="input-group">
+                         <input type="text" class="form-control" placeholder="search..." name="search" onfocus="this.placeholder=''" onblur="this.placeholder='search...'">
+                         <span class="input-group-btn"> <button class="btn btn-info" type="submit">search</button></span>
+                         </div>
+                </form>       
+            </div>         
+     </header>
+     <nav class="container navbar narbar-default">
+            <ul class="nav nav-tabs">
+            <li role="presentation"><a  class="navhomepage" href="First%20Page.html">Home</a> </li>
+            <li role="presentation"><a class="navsearch "href="Search%20Page.html">Search</a> </li>
+            <li role="presentation" class="active"><a class="navdetail" href="Picture%20Details%20Page.html">Details</a></li>
+            <li role="presentation"><a class="login" href="#login">Login</a> </li>
+            <li role="presentation"><a class="registration" href="#registration">registration</a></li>
+            </ul>
+        </nav> 
+<div class="popup" id="login">
+    <div class="popup-content">
+        <form action="#" method="post">
+            <p>
+                <span>用户名</span><br>
+                <input type="text" name="username"><span class="tip" id="loginUsernameTip"></span>
+            </p>
+            <p>
+                <span>密码</span><br>
+                <input type="password" name="password" required><span class="tip" id="loginPasswordTip"></span>
+            </p>
+            <p>
+                <span>验证码(点击刷新)</span><br>
+            <div id="captchaimg"></div><br>
+            <input type="text" name="captcha" required><span class="tip" id="loginCaptchaTip"></span>
+            </p>
+            <p>
+                <button class="btn btn-primary" type="submit">确认</button>
+            </p>
+        </form>
+        <a href="#" class="close">x</a>
+    </div>
+</div>
+
+<div class="popup" id="registration">
+    <div class="popup-content">
+        <form action="#" method="post">
+            <p>
+                用户名<br>
+                <input type="text" name="username" minlength="6"  required>
+                <span class="tooltips" data-tooltip="至少6位，不能位纯数字或纯字母">?</span><span class="tip" id="registrationUsernameTip"></span>
+            </p>
+            <p>
+                密码<br><!不能与用户名相同>
+                <input type="password" name="password" minlength="6" required>
+                <span class="tooltips" data-tooltip="至少6位，不能与用户名相同">?</span><span class="tip" id="registrationPasswordTip"></span>
+            </p>
+            <p>
+                确认密码<br>
+                <input type="password" name="repassword" minlength="6" required>
+                <span class="tip" id="registrationRePasswordTip"></span>
+            </p>
+            <p>
+                您的手机号<br><!以1开头11位数字>
+                <input type="text" name="telephone" pattern="^1\d{10}$"  required>
+                <span class="tooltips" data-tooltip="11位纯数字，开头为1">?</span>
+                <span class="tip" id="telephone"></span>
+            </p>
+            <p>
+                <button class="btn btn-primary" type="submit" name="submit">
+                    确认
+                </button>
+            </p>
+        </form>
+        <a href="#" class="close">x</a>
+    </div>
+</div>
+<article>
+    <div class="info">
+        <h2 class="picname">
+        Whistler's Mother
+    </h2>
+    <p>By <a class="author" href=""><span>James Abbott McNeill Whistler</span></a></p>
+    <img class="img" src="../images/works/average/013030.jpg">
+    </div>
+    <table class="detail" border="1">
+        <tr>
+            <th colspan="2">Production Detail</th>
+        </tr>
+        <tr>
+            <td>Date</td>
+            <td class="date">1871</td>
+        </tr>
+        <tr>
+            <td>Medium</td>
+            <td class="medium">Oil on canvas</td>
+        </tr>
+        <tr>
+            <td>Dimensions</td>
+            <td class="dimensions">144.3 cm × 162.4 cm (56.8 in × 63.9 in)</td>
+        </tr>
+        <tr>
+            <td>Home</td>
+            <td class="home">Louvre Abu Dhabi, Abu Dhabi</td>
+        </tr>
+        <tr>
+            <td>Genres</td>
+            <td class="genres">Neoclassical</td>
+        </tr>
+        <tr>
+            <td>Subjects</td>
+            <td class="subjects">People,Family</td>
+        </tr>
+        <tr>
+            <td>Heat</td>
+            <td class="heat">66</td>
+        </tr>
+    </table>
+    <div class="add">
+    <p class="desc">This work is amazing but there is no introduction for it</p>
+    <p class="price">price:<span class="pricenumber">6,666,666</span></p>
+    <a><button class="btn btn-warning" name="shoppingcart"> <span class="glyphicon glyphicon-shopping-cart"></span> Add to Shopping Cart</button></a><br>
+    </div>
+</article>
+
+<footer>
+    <hr/>
+    <p>Produced by WangDonghui in 18ss at 2019/3/14</p>
+</footer>
+<script src="js/scriptsdetailspage.js"></script>
+<script src="js/scriptscaptcha.js"></script>
+<script src="js/scriptslogin.js"></script>
+<script src="js/scriptsregister.js"></script>
+</body>
+</html>

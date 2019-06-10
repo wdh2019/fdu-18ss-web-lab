@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personal Information</title>
+    <link href="../bootstrap3/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/CSS%20userinformation.css">
+    <script src="http://code.jquery.com/jquery-3.1.0.min.js">
+    </script>
+</head>
+<body>
+        <header class="container">
+                <ul class="row list list-unstyled list-inline" id="afterloginorregistration">
+                         <li>Welcome!<strong></strong></li><li><a class="shoppingcart" href="Shopping%20Cart%20Page.html"><span class="glyphicon glyphicon-shopping-cart"></span>shoppingcart</a></li><li><a class="logout"><span class="glyphicon glyphicon-log-out"></span> logout</a></li>
+                </ul>
+                        
+                <div class="row"><h1 title="logo" class="col-lg-2">Art Store</h1>
+                         <div class="col-lg-3">As the sun colours flowers so does art colour life．</div>  
+                    <form action="Search%20Page.html" method="get" class="col-lg-2 col-lg-offset-5 form-inline">
+                             <div class="input-group">
+                             <input type="text" class="form-control" placeholder="search..." name="search" onfocus="this.placeholder=''" onblur="this.placeholder='search...'">
+                             <span class="input-group-btn"> <button class="btn btn-info" type="submit">search</button></span>
+                             </div>
+                    </form>       
+                </div>         
+         </header>
+         <nav class="container navbar narbar-default">
+                <ul class="nav nav-tabs">
+                <li role="presentation"><a  class="navhomepage" href="First%20Page.html">Home</a> </li>
+                <li role="presentation"><a class="navsearch "href="Search%20Page.html">Search</a> </li>
+                <li role="presentation"><a class="navdetail" href="Picture%20Details%20Page.html">Details</a></li>
+                </ul>
+            </nav>
+<section name="personal information">
+    <p>用户名：<span class="username">username</span></p>
+    <p>密码：<span class="password">111111</span></p>
+    <p>电话号码：<span class="telephone">11111111111</span></p>
+    <p>余额：<span class="money">400,000</span></p>
+    <button name="deposit">充值</button>
+</section>
+<section id="uploadedproducts">
+    <h4>我上传的艺术品</h4>
+    <table name="uploadedproductsheet">
+        <tr>
+            <td>编号订单:20190314</td>
+            <td>商品名称：1</td>
+            <td>订单时间:2019/3/14</td>
+            <td>订单金额：￥120,000</td>
+        </tr>
+        <tr>
+            <td>编号订单:20190315</td>
+            <td>商品名称：2</td>
+            <td>订单时间:2019/3/15</td>
+            <td>订单金额：￥170,000</td>
+        </tr>
+    </table>
+</section>
+<section id="boughtproducts">
+    <h4>我购买的艺术品</h4>
+
+</section>
+    <section id="soldproducts">
+        <h4>我卖掉的艺术品</h4>
+        <table name="soldproductsheet">
+            <tr>
+                <td>编号订单:20190314</td>
+                <td>商品名称：1</td>
+                <td>订单时间:2019/3/14</td>
+                <td>订单金额：￥120,000</td>
+            </tr>
+            <tr>
+                <td>编号订单:20190315</td>
+                <td>商品名称：2</td>
+                <td>订单时间:2019/3/15</td>
+                <td>订单金额：￥170,000</td>
+            </tr>
+        </table>
+
+</section>
+<footer>
+    <hr/>
+    <p>Produced by WangDonghui in 18ss at 2019/3/14</p>
+</footer>
+<script src="js/scriptsuserpage.js"></script>
+</body>
+</html>

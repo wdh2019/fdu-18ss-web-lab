@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Page</title>
+    <link href="../bootstrap3/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/CSS%20searchpage.css">
+    <link href="css/CSS log+reg.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-3.1.0.min.js">
+    </script>
+</head>
+<body>
+        <header class="container">
+                <ul class="row list list-unstyled list-inline" id="afterloginorregistration">
+                         <li>Welcome! Please first <strong><a href="#login">Login</a></strong>/<strong><a href="#registration">Register</a></strong> </li><li><a class="shoppingcart" href="Shopping%20Cart%20Page.html"><span class="glyphicon glyphicon-shopping-cart"></span>shoppingcart</a></li><li><a class="logout"><span class="glyphicon glyphicon-log-out"></span> logout</a></li>
+                </ul>
+                        
+                <div class="row"><h1 title="logo" class="col-lg-2">Art Store</h1>
+                         <div class="col-lg-3">As the sun colours flowers so does art colour life．</div>  
+                    <form action="Search%20Page.html" method="get" class="col-lg-2 col-lg-offset-5 form-inline">
+                             <div class="input-group">
+                             <input type="text" class="form-control" placeholder="search..." name="search" onfocus="this.placeholder=''" onblur="this.placeholder='search...'">
+                             <span class="input-group-btn"> <button class="btn btn-info" type="submit">search</button></span>
+                             </div>
+                    </form>       
+                </div>         
+         </header>
+         <nav class="container navbar narbar-default">
+                <ul class="nav nav-tabs">
+                <li role="presentation"><a  class="navhomepage" href="First%20Page.html">Home</a> </li>
+                <li role="presentation" class="active"><a class="navsearch "href="Search%20Page.html">Search</a> </li>
+                <li role="presentation"><a class="navdetail" href="Picture%20Details%20Page.html">Details</a></li>
+                <li role="presentation"><a class="login" href="#login">Login</a> </li>
+                <li role="presentation"><a class="registration" href="#registration">registration</a></li>
+                </ul>
+            </nav>
+<div class="popup" id="login">
+    <div class="popup-content">
+        <form action="#" method="post">
+            <p>
+                <span>用户名</span><br>
+                <input type="text" name="username"><span class="tip" id="loginUsernameTip"></span>
+            </p>
+            <p>
+                <span>密码</span><br>
+                <input type="password" name="password" required><span class="tip" id="loginPasswordTip"></span>
+            </p>
+            <p>
+                <span>验证码(点击刷新)</span><br>
+            <div id="captchaimg"></div><br>
+            <input type="text" name="captcha" required><span class="tip" id="loginCaptchaTip"></span>
+            </p>
+            <p>
+                <button type="submit">确认</button>
+            </p>
+        </form>
+        <a href="#" class="close">x</a>
+    </div>
+</div>
+
+<div class="popup" id="registration">
+    <div class="popup-content">
+        <form action="#" method="post">
+            <p>
+                用户名<br>
+                <input type="text" name="username" minlength="6"  required>
+                <span class="tooltips" data-tooltip="至少6位，不能位纯数字或纯字母">?</span><span class="tip" id="registrationUsernameTip"></span>
+            </p>
+            <p>
+                密码<br><!不能与用户名相同>
+                <input type="password" name="password" minlength="6" required>
+                <span class="tooltips" data-tooltip="至少6位，不能与用户名相同">?</span><span class="tip" id="registrationPasswordTip"></span>
+            </p>
+            <p>
+                确认密码<br>
+                <input type="password" name="repassword" minlength="6" required>
+                <span class="tip" id="registrationRePasswordTip"></span>
+            </p>
+            <p>
+                您的手机号<br><!以1开头11位数字>
+                <input type="text" name="telephone" pattern="^1\d{10}$"  required>
+                <span class="tooltips" data-tooltip="11位纯数字，开头为1">?</span>
+                <span class="tip" id="telephone"></span>
+            </p>
+            <p>
+                <button type="submit" name="submit">
+                    确认
+                </button>
+            </p>
+        </form>
+        <a href="#" class="close">x</a>
+    </div>
+</div>
+<article>
+    <h1>搜索结果：</h1>
+    <div><span>排序方式：</span>
+        <input type="radio" value="价格" name="order" id="priceorder">价格
+        <input type="radio" value="热度" name="order" id="hotorder">热度
+        <input type="radio" value="标题" name="order" id="titleorder">标题
+    </div>
+    <table>
+        <tr>
+            <td><img src="./images/works/square-medium/001020.jpg"><h3>Family</h3><h4>author a</h4>
+                <p>A Family.What on earth are they doing?</p>
+            <a href="Picture%20Details%20Page.html"><button name="view" value="查看">查看</button></a>
+            <label name="heat" value="热度">热度7</label>
+            </td>
+            <td><img src="./images/works/square-medium/001050.jpg"><h3>Handsome Man</h3><h4>me</h4>
+                <p>a portrait of myself(not actually)</p>
+                <a href="Picture%20Details%20Page.html"><button name="view" value="查看">查看</button></a>
+                <label name="heat" value="热度">热度77</label>
+            </td>
+            <td><img src="./images/works/square-medium/001060.jpg"><h3>OldMAN</h3><h4>NAMblO</h4>
+                <p>An old man playing guitar</p>
+                <a href="Picture%20Details%20Page.html"><button name="view" value="查看">查看</button></a>
+                <label name="heat" value="热度">热度777</label>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="./images/works/square-medium/001080.jpg"><h3>PEOPLE</h3><h4>bbb</h4>
+                <p>a group of people wearing costumes</p>
+                <a href="Picture%20Details%20Page.html"><button name="view" value="查看">查看</button></a>
+                <label name="heat" value="热度">热度1800</label>
+            </td>
+            <td><img src="./images/works/square-medium/001090.jpg"><h3>imagination</h3><h4>wow</h4>
+                <p>i don't know what he is painting</p>
+                <a href="Picture%20Details%20Page.html"><button name="view" value="查看">查看</button></a>
+                <label name="heat" value="热度">热度666</label>
+            </td>
+            <td><img src="./images/works/square-medium/001100.jpg"><h3>imagination2</h3><h4>wow</h4>
+                <p>He seems full of passion on painting something we dont understand</p>
+                <a href="Picture%20Details%20Page.html"><button name="view" value="查看">查看</button></a>
+                <label name="heat" value="热度">热度0</label>
+            </td>
+        </tr>
+        <tr>
+            <td><img src="./images/works/square-medium/001130.jpg"><h3>Youngman</h3><h4>emmm</h4>
+                <p>Look like that man?!</p>
+                <a href="Picture%20Details%20Page.html"><button name="view" value="查看">查看</button></a>
+                <label name="heat" value="热度">热度4396</label>
+            </td>
+            <td><img src="./images/works/square-medium/001140.jpg"><h3>women 5</h3><h4>bijiasuo</h4>
+                <p>egnarts os</p>
+                <a href="Picture%20Details%20Page.html"><button name="view" value="查看">查看</button></a>
+                <label name="heat" value="热度">热度9999</label>
+            </td>
+            <td><img src="./images/works/square-medium/001150.jpg"><h3>midageman</h3><h4>me</h4>
+                <p>thinking of something</p>
+                <a href="Picture%20Details%20Page.html"><button name="view" value="查看">查看</button></a>
+                <label name="heat" value="热度">热度6</label>
+            </td>
+        </tr>
+    </table>
+</article>
+<footer>
+    <button class="page">1</button>
+    <button class="page">2</button>
+    <button class="page">3</button>
+    <button class="page">4</button>
+    <button class="page">5</button>
+    <button class="page">6</button>
+    <button class="page">7</button>
+    <button class="page">8</button>
+    <button class="page">9</button>
+    <button class="page">10</button>
+    <button class="page">11</button>
+    <button class="page">12</button>
+    <button class="page">13</button>
+    <button class="page">14</button>
+    <button class="page">15</button>
+    <button class="page">16</button>
+    <button class="page">17</button>
+    <button class="page">18</button>
+    <button class="page">19</button>
+    <button class="page">20</button>
+    <button class="page">21</button>
+    <button class="page">...</button>
+    <hr/>
+        <p>Produced by WangDonghui in 18ss at 2019/3/14</p>
+</footer>
+<script src="js/scriptssearchpage.js"></script>
+<script src="js/scriptscaptcha.js"></script>
+<script src="js/scriptslogin.js"></script>
+<script src="js/scriptsregister.js"></script>
+</body>
+</html>
